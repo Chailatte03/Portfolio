@@ -344,6 +344,7 @@ html {
    ". cover cover cover ."
     ". inhalt inhalt inhalt .";
     row-gap: 50px; /* Definiert den Abstand zwischen Cover und Inhalt */
+    
 }
 
 /* --- .inhalt-bild-statisch REGEL WURDE ENTFERNT --- */
@@ -390,6 +391,19 @@ html {
     font-family: "aboreto", sans-serif;
     font-weight: 400;
     font-style: normal;
+    
+    
+}
+
+.sprache {
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+    
+
 }
 
 
