@@ -408,19 +408,16 @@ html {
 
 
 /* Kontakt */
-
-.telefonnummer,
 .email {
     text-align: center;
     font-size: 1.5em; 
     font-family: "aboreto", sans-serif;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
 
-.telefonnummer a,
 .email a {
     text-decoration: none;
     color: black; 
@@ -428,7 +425,7 @@ html {
     display: inline-block;
 }
 
-.telefonnummer a:hover,
+
 .email a:hover {
     transform: scale(1.1);
     cursor: pointer;
