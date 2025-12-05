@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 img {
     width: 100%;
     display: block;
@@ -7,6 +11,7 @@ body {
 font-family: "dm-sans", sans-serif;
 font-weight: 400;
 font-style: normal;
+margin: 0;
 }
 
 /* Menüleiste Homepage */
@@ -341,24 +346,6 @@ html {
     row-gap: 50px; /* Definiert den Abstand zwischen Cover und Inhalt */
 }
 
-.bild-cover {
-    grid-area: cover;
-    margin-top: 0px; 
-    margin-bottom: 3px;
-    
-}
-
-
-/* 2. NEU: Der Wrapper erhält die Area und Flexbox zur Anordnung */
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
-
-}
-
 /* --- .inhalt-bild-statisch REGEL WURDE ENTFERNT --- */
 
 
@@ -397,7 +384,13 @@ html {
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
 }
 
-
+.skills {
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 
 /* Kontakt */
@@ -462,19 +455,6 @@ html {
     ". inhalt inhalt inhalt ." /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
     ;
     row-gap: 50px; /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-
-
-
-/* 2. NEU: Der Wrapper erhält die Area und Flexbox zur Anordnung */
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
-
 }
 
 /* 3. Styling für die Elemente im Wrapper */
@@ -586,16 +566,6 @@ html {
     /* Definiert den Abstand zwischen Cover und Inhalt */
 }
 
-
-
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
-}
-
 .bildinhalt1 {
     width: 100%; 
     max-width: 800px; /* Optional: Maximale Breite festlegen */
@@ -699,14 +669,6 @@ html {
 }
 
 
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
-}
-
 .bildinhalt1 {
     width: 100%; 
     max-width: 800px; 
@@ -807,15 +769,6 @@ html {
 }
 
 
-
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
-}
-
 .bildinhalt1 {
     width: 100%; 
     max-width: 800px; 
@@ -915,21 +868,10 @@ html {
 
 .bild-cover {
     grid-area: cover;
-    margin-top: -17%; 
     margin-bottom: 50px;
-    scale: 80%;
+    padding: 0 10%;
 }
 
-
-/* 2. NEU: Der Wrapper erhält die Area und Flexbox zur Anordnung */
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
-
-}
 
 
 
@@ -994,11 +936,6 @@ html {
 }
 
 
-.projekttextwhiskeyclub-text {
-
-    margin-top: 0; 
-    max-width: 80%;
-}
 
 .entwurfbild {
     /* 1. Volle Breite des Viewports */
@@ -1062,14 +999,6 @@ html {
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.
     30));
     margin-bottom: 50px;
-}
-
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
 }
 
 .bildinhalt1 {
@@ -1309,13 +1238,6 @@ html {
     width: 100%;
 }
 
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
-}
 
 .bildinhalt1 {
     width: 100%; 
@@ -1452,14 +1374,6 @@ html {
     margin-bottom: 50px;
 }
 
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
-}
-
 .bildinhalt1 {
     width: 100%; 
     max-width: 800px; 
@@ -1591,16 +1505,6 @@ html {
     "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
     ;
     /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-
-
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
 }
 
 .bildinhalt1 {
