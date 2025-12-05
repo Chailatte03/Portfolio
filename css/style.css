@@ -1,0 +1,1724 @@
+img {
+    width: 100%;
+    display: block;
+}
+
+body {
+font-family: "dm-sans", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+/* Menüleiste Homepage */
+/* Homepage */
+
+
+a {
+    color: black;
+    text-decoration: none;
+}
+.nav {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+grid-template-areas: 
+"nav_1 . . nav_2 . . nav_3";
+position: sticky;
+padding: 20px 50px;
+top: 0;
+z-index: 1000;
+background-color: transparent;   
+transition: all 0.3s ease;
+transition: all 0.3s ease-out;
+
+font-family: "aboreto", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+
+
+    
+}
+
+.nav_1, .nav_2, .nav_3 {
+    /* --- OPTIK (Größe, Farbe, Milchglas) --- */
+    background-color: rgba(255, 255, 255, 0.30); /* Leicht transparentes Weiß */
+    backdrop-filter: blur(20px);                 /* Starkes Verschwimmen */
+    -webkit-backdrop-filter: blur(20px);         /* Für Safari */
+    
+    padding: 15px 30px;  
+    border-radius: 30px; 
+    font-size: 20px;    
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: scale(1);
+}
+
+
+/* Hover Navigation */
+.nav_1:hover, .nav_2:hover, .nav_3:hover {
+    /* Die Pille wird 10% größer */
+    transform: scale(1.1); 
+    
+    /* Farbe Pille*/
+    background-color: rgba(255, 255, 255, 0.9); 
+    
+    /* Schatten */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    
+    /* Mauszeiger wird zur Hand */
+    cursor: pointer;
+}
+
+
+.nav_1 {
+  text-align: left;
+  grid-area: nav_1;
+  justify-self: start;
+}
+
+.nav_2 {
+  display: grid;
+  text-align: center;
+  grid-area: nav_2;
+  justify-self: center;
+}
+
+.nav_3 {
+  display: grid;
+  text-align: right;
+  grid-area: nav_3;
+  justify-self: end
+}
+
+/* Hauptbild + Coverbilder Homepage */
+.bild {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "hauptbild hauptbild hauptbild hauptbild"
+    "erstesbild  zweitesbild dritesbild viertesbild"
+    "fünftesbild sechstesbild achtesbild neuntesbild"
+    ". elftesbild zehntesbild .";
+}
+html {
+    /* Fügt ein sanftes Scroll-Verhalten für Anker-Links hinzu */
+    scroll-behavior: smooth;
+}
+.bild-2, .bild-3, .bild-4, .bild-5, .bild-6, .bild-7, .bild-8, .bild-9, .bild-10, .bild-11 {
+    /* Sorgt dafür, dass die Bewegung 0.4 Sekunden dauert und sanft abbremst */
+    transition: transform 0.4s ease-out;
+}
+
+/* 2. Die Bewegung beim Drüberfahren (Hover) */
+.bild-2:hover, .bild-3:hover, .bild-4:hover, .bild-5:hover, .bild-6:hover, .bild-7:hover, .bild-8:hover, .bild-9:hover, .bild-10:hover, .bild-11:hover {
+    /* translateY(-15px) = Das Bild schwebt 15 Pixel nach oben */
+    /* scale(1.02) = Das Bild wird minimal (2%) grösser (sieht edel aus) */
+    transform: translateY(-15px) scale(1.02);
+    
+    /* Mauszeiger wird zur Hand */
+    cursor: pointer;
+}
+
+
+.bild-1 {
+    grid-area: hauptbild;
+    margin-bottom: 150px;
+    margin-top: -170px;
+}
+
+/* Bilder Homepage */
+
+.bild-2 {
+    grid-area: erstesbild;
+    margin-bottom: 0px;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.40));
+    /* Abstand an einem der Vier Kanten */
+    padding: 0px 0px 0px 0px;
+   /* Bild skalieren */
+    width: 66%;
+    justify-self: center;
+    align-self: baseline;
+    
+}
+
+.bild-unterschrift-1 {
+    /* Optional: Schriftgröße und Ausrichtung anpassen */
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+.bild-3 {
+    grid-area: zweitesbild;
+    margin-bottom: 0px;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    padding: 0px 0px 0px 0px;
+    width: 60%;
+    justify-self: center;
+    align-self: baseline;
+}
+.bild-unterschrift-2 {
+    /* Optional: Schriftgröße und Ausrichtung anpassen */
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+.bild-4 {
+    grid-area: dritesbild;
+    margin-bottom: 0px;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    padding: 0px 0px 0px 0px;
+    width: 60%;
+    justify-self: center;
+    align-self: baseline;
+}
+
+.bild-unterschrift-3 {
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+.bild-5 {
+    grid-area: viertesbild;
+    margin-bottom: 0%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    padding: 0px 0px 0px 0px;
+    width: 65%;
+    justify-self: center;
+    align-self: baseline;
+    
+}
+
+.bild-unterschrift-4 {
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+.bild-6 {
+    grid-area: fünftesbild;
+    margin-bottom: 0%;
+    margin-top: 5%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    padding: 0px 0px 0px 0px;
+    width: 90%;
+    justify-self: center;
+    align-self: baseline;
+    
+}
+
+.bild-unterschrift-5 {
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+.bild-7 {
+    grid-area: sechstesbild;
+    margin-bottom: 0%;
+    margin-top: 5%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    padding: 0px 0px 0px 0px;
+    width: 60%;
+    justify-self: center;
+    align-self: baseline;
+
+}
+
+.bild-unterschrift-6 {
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+.bild-8 {
+    grid-area: achtesbild;
+    margin-bottom: 0%;
+    margin-top: 5%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    padding: 0px 0px 0px 0px;
+    width: 57%;
+    justify-self: center;
+    align-self: baseline;
+}
+
+.bild-unterschrift-7 {
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+.bild-9 {
+    grid-area: neuntesbild;
+    margin-bottom: 0%;
+    margin-top: 5%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    padding: 0px 0px 0px 0px;
+    width: 57%;
+    justify-self: center;
+    align-self: baseline;
+}
+
+.bild-unterschrift-8 {
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+.bild-10 {
+    grid-area: zehntesbild;
+    margin-bottom: 0%;
+    margin-top: 5%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    padding: 0px 0px 0px 0px;
+    width: 57%;
+    justify-self: center;
+    align-self: baseline;
+}
+
+.bild-unterschrift-9 {
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+.bild-11 {
+    grid-area: elftesbild;
+    margin-bottom: 0%;
+    margin-top: 5%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    padding: 0px 0px 0px 0px;
+    width: 57%;
+    justify-self: center;
+    align-self: baseline;
+}
+
+.bild-unterschrift-10 {
+    font-size: 15px;
+    text-align: center; 
+    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
+    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Über mich seite*/
+
+.bildportrait {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+   ". cover cover cover ."
+    ". inhalt inhalt inhalt .";
+    row-gap: 50px; /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+.bild-cover {
+    grid-area: cover;
+    margin-top: 0px; 
+    margin-bottom: 3px;
+    
+}
+
+
+/* 2. NEU: Der Wrapper erhält die Area und Flexbox zur Anordnung */
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+
+}
+
+/* --- .inhalt-bild-statisch REGEL WURDE ENTFERNT --- */
+
+
+.projekttextwhiskeyclub-titel {
+ 
+    /* Abstand wird hier neu definiert, da das Inhaltsbild fehlt */
+    margin-top: 5px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextwhiskeyclub-text {
+
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    
+    /* 2. Zentrierung im Grid-Kontext (kritisch!) */
+    /* Die Hälfte der Differenz zwischen Container-Breite und Viewport-Breite negativ verschieben */
+    position: relative;
+    left: 94.5%;
+    transform: translateX(-50%);
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 100px; 
+    margin-bottom: 0px; 
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+}
+
+
+
+
+/* Kontakt */
+
+.telefonnummer,
+.email {
+    text-align: center;
+    font-size: 1.5em; 
+    font-family: "aboreto", sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+
+.telefonnummer a,
+.email a {
+    text-decoration: none;
+    color: black; 
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.telefonnummer a:hover,
+.email a:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* londonprojekt */
+.bildlondon {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". inhalt inhalt inhalt ." /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
+    ;
+    row-gap: 50px; /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+
+
+
+/* 2. NEU: Der Wrapper erhält die Area und Flexbox zur Anordnung */
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+
+}
+
+/* 3. Styling für die Elemente im Wrapper */
+.bildinhalt1 {
+    width: 100%; 
+    max-width: 800px; /* Optional: Maximale Breite festlegen */
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    margin-bottom: 100px; 
+    margin-top: 100px; 
+}
+
+
+
+
+.slideshow-container {
+    /* Wichtig: Erstellt einen Referenzpunkt für die absolut positionierten Bilder */
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0;
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.projekttextlondon-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextlondon-text {
+
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    
+    /* 2. Zentrierung im Grid-Kontext (kritisch!) */
+    /* Die Hälfte der Differenz zwischen Container-Breite und Viewport-Breite negativ verschieben */
+    position: relative;
+    left: 94.5%;
+    transform: translateX(-50%);
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 100px; 
+    margin-bottom: 0px; 
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+}
+
+
+
+
+/* Zeitsprale */
+.bildzeitspirale {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". inhalt inhalt inhalt ."
+    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
+    ;
+    /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+
+
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+}
+
+.bildinhalt1 {
+    width: 100%; 
+    max-width: 800px; /* Optional: Maximale Breite festlegen */
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    margin-bottom: 100px; 
+    margin-top: 100px; 
+}
+
+.slideshow-container {
+    /* Wichtig: Erstellt einen Referenzpunkt für die absolut positionierten Bilder */
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0;
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.projekttextzeitspirale-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextzeitspirale-text {
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 0px; 
+    
+   
+    box-shadow: none;
+    filter: none
+   
+}
+
+
+
+
+
+/* Bewegung im Bild */
+.bildbewegungimbild {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". inhalt inhalt inhalt ."
+    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
+    ;
+    /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+}
+
+.bildinhalt1 {
+    width: 100%; 
+    max-width: 800px; 
+    margin-bottom: 100px; 
+    margin-top: 100px; 
+}
+
+.slideshow-container {
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0;
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.projekttextzeitspirale-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextzeitspirale-text {
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 0px; 
+    
+   
+    box-shadow: none;
+    filter: none
+   
+}
+
+
+
+/* Lampen */
+
+.bildlampen {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". inhalt inhalt inhalt ."
+    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
+    ;
+    /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+
+
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+}
+
+.bildinhalt1 {
+    width: 100%; 
+    max-width: 800px; 
+    margin-bottom: 100px; 
+    margin-top: 100px; 
+}
+
+.slideshow-container {
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0;
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.projekttextzeitspirale-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextzeitspirale-text {
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 100px; 
+    
+   
+    box-shadow: none;
+    filter: none
+   
+}
+
+
+/* Whiskey Club */
+
+.bildwhiskeyclub {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+   ". cover cover cover ."
+    ". inhalt inhalt inhalt .";
+    row-gap: 50px; /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+.bild-cover {
+    grid-area: cover;
+    margin-top: -17%; 
+    margin-bottom: 50px;
+    scale: 80%;
+}
+
+
+/* 2. NEU: Der Wrapper erhält die Area und Flexbox zur Anordnung */
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+
+}
+
+
+
+
+.slideshow-container {
+    /* Wichtig: Erstellt einen Referenzpunkt für die absolut positionierten Bilder */
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0;
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.projekttextwhiskeyclub-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextwhiskeyclub-text {
+
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    
+    /* 2. Zentrierung im Grid-Kontext (kritisch!) */
+    /* Die Hälfte der Differenz zwischen Container-Breite und Viewport-Breite negativ verschieben */
+    position: relative;
+    left: 94.5%;
+    transform: translateX(-50%);
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 100px; 
+    margin-bottom: 0px; 
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Kopfzeichnen */
+.bildkopfzeichnen{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "cover cover cover cover cover" /* Zeile 1: Cover-Bild */
+    ". inhalt inhalt inhalt ."
+    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
+    ;
+    /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+.bild7 {
+    grid-area: cover;
+    margin-top: -170px; 
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.
+    30));
+    margin-bottom: 50px;
+}
+
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+}
+
+.bildinhalt1 {
+    width: 100%; 
+    max-width: 800px; 
+    margin-bottom: 100px; 
+    margin-top: 100px; 
+}
+
+.slideshow-container {
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0;
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.projekttextzeitspirale-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextzeitspirale-text {
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 100px; 
+    
+   
+    box-shadow: none;
+    filter: none
+   
+}
+
+
+
+
+
+/* Zwei Leben */
+
+.bildzweileben { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . cover . ." /* Zeile 1: Cover-Bild */
+    ". inhalt inhalt inhalt ."
+    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
+    ;
+    /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+.video {
+    grid-area: cover;
+    margin-top: 40px; 
+    margin-bottom: 200px;
+    scale: 125%;
+    width: 100%;
+}
+
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+}
+
+.bildinhalt1 {
+    width: 100%; 
+    max-width: 800px; 
+    margin-bottom: 100px; 
+    margin-top: 100px; 
+}
+
+.slideshow-container {
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0;
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.projekttextzeitspirale-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextzeitspirale-text {
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 100px; 
+    
+   
+    box-shadow: none;
+    filter: none
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Musikplakat */
+
+
+.bildmusikplakat { 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . cover . ." /* Zeile 1: Cover-Bild */
+    ". inhalt inhalt inhalt ."
+    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
+    ;
+    /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+.video {
+    grid-area: cover;
+    margin-top: 40px; 
+    margin-bottom: 200px;
+    scale: 125%;
+    width: 100%;
+}
+
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+}
+
+.bildinhalt1 {
+    width: 100%; 
+    max-width: 800px; 
+    margin-bottom: 100px; 
+    margin-top: 100px; 
+}
+
+.slideshow-container {
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 3px 3px 0;
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.projekttextzeitspirale-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextzeitspirale-text {
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 100px; 
+    
+   
+    box-shadow: none;
+    filter: none
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fotografie */
+
+.bildfotografie {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". cover cover cover ." /* Zeile 1: Cover-Bild */
+    ". inhalt inhalt inhalt ."
+    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
+    ;
+    /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+.bild10 {
+    grid-area: cover;
+    margin-top: 2%; 
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.
+    30));
+    margin-bottom: 50px;
+}
+
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+}
+
+.bildinhalt1 {
+    width: 100%; 
+    max-width: 800px; 
+    margin-bottom: 100px; 
+    margin-top: 100px; 
+}
+
+.slideshow-container {
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+            0 4px 12px rgba(0, 0, 0, 0.4);
+    top: 50%;
+    
+    /* NEU: Feste Maße und Padding entfernen, um perfekte Rundheit zu garantieren */
+    width: 55px; 
+    height: 55px;
+    padding: 0; 
+    
+    margin-top: -22px; /* Setzt auf die halbe Höhe (44px/2) des neuen Pfeils */
+    color: #1f2937; /* Dunkle Farbe für besseren Kontrast */
+    font-weight: bold;
+    font-size: 2.25rem; /* Größerer Pfeil */
+    transition: 0.6s ease;
+    user-select: none;
+    
+    /* MILCHIGER EFFEKT */
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Für Safari */
+
+    border-radius: 9999px; /* Runde Form */
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+
+    /* Zentriert den Pfeilinhalt */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Sorgt dafür, dass der Pfeil sichtbar ist */
+    visibility: visible !important; 
+    opacity: 1 !important; 
+}
+
+/* Positionierung des linken Pfeils ausserhalb */
+.prev {
+    left: 0;
+    transform: translate(calc(-100% - 10px), 0); 
+    padding-right: 4px;
+}
+
+/* Positionierung des rechten Pfeils ausserhalb */
+.next {
+    right: 0;
+    transform: translate(calc(100% + 10px), 0);
+    padding-left: 4px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    
+}
+
+
+.projekttextzeitspirale-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextzeitspirale-text {
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 100px; 
+    
+   
+    box-shadow: none;
+    filter: none
+   
+}
+
+/* Skizzen */
+
+.bildskizzen {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    ". . cover . ." /* Zeile 1: Cover-Bild */
+    ". inhalt inhalt inhalt ."
+    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
+    ;
+    /* Definiert den Abstand zwischen Cover und Inhalt */
+}
+
+
+
+.projekt-inhalt {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column; /* Stellt Bild und Text untereinander */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+}
+
+.bildinhalt1 {
+    width: 100%; 
+    max-width: 800px; 
+    margin-bottom: 100px; 
+    margin-top: 100px; 
+}
+
+.slideshow-container {
+    position: relative; 
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    /* Stapelt alle Bilder übereinander */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    /* Versteckt alle Bilder standardmäßig */
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
+}
+
+/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+}
+
+/* Styling für die Pfeile */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+            0 4px 12px rgba(0, 0, 0, 0.4);
+    top: 50%;
+    
+    /* NEU: Feste Maße und Padding entfernen, um perfekte Rundheit zu garantieren */
+    width: 55px; 
+    height: 55px;
+    padding: 0; 
+    
+    margin-top: -22px; /* Setzt auf die halbe Höhe (44px/2) des neuen Pfeils */
+    color: #1f2937; /* Dunkle Farbe für besseren Kontrast */
+    font-weight: bold;
+    font-size: 2.25rem; /* Größerer Pfeil */
+    transition: 0.6s ease;
+    user-select: none;
+    
+    /* MILCHIGER EFFEKT */
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Für Safari */
+
+    border-radius: 9999px; /* Runde Form */
+    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
+
+    /* Zentriert den Pfeilinhalt */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Sorgt dafür, dass der Pfeil sichtbar ist */
+    visibility: visible !important; 
+    opacity: 1 !important; 
+}
+
+/* Positionierung des linken Pfeils ausserhalb */
+.prev {
+    left: 0;
+    transform: translate(calc(-100% - 10px), 0); 
+    padding-right: 4px;
+}
+
+/* Positionierung des rechten Pfeils ausserhalb */
+.next {
+    right: 0;
+    transform: translate(calc(100% + 10px), 0);
+    padding-left: 4px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    
+}
+
+
+.projekttextzeitspirale-titel {
+ 
+    margin-top: 50px; 
+    font-size: 30px;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+.projekttextzeitspirale-text {
+    margin-top: 0; 
+    max-width: 80%;
+}
+
+.entwurfbild {
+    /* 1. Volle Breite des Viewports */
+    width: 100vw; 
+    height: auto;
+    display: block;
+    object-fit: cover;
+    margin-top: 0px; 
+    
+   
+    box-shadow: none;
+    filter: none
+   
+}
