@@ -369,11 +369,8 @@ html {
 }
 
 .entwurfbild {
-    /* 1. Volle Breite des Viewports */
+
     width: 100vw; 
-    
-    /* 2. Zentrierung im Grid-Kontext (kritisch!) */
-    /* Die Hälfte der Differenz zwischen Container-Breite und Viewport-Breite negativ verschieben */
     position: relative;
     left: 94.5%;
     transform: translateX(-50%);
