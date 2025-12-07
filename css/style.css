@@ -503,23 +503,7 @@ html {
     position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
 }
 
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 3px 3px 0;
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-}
+
 
 .next {
     right: 0;
@@ -608,23 +592,7 @@ html {
     position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
 }
 
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 3px 3px 0;
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-}
+
 
 .next {
     right: 0;
@@ -709,23 +677,7 @@ html {
     position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
 }
 
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 3px 3px 0;
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-}
+
 
 .next {
     right: 0;
@@ -809,23 +761,7 @@ html {
     position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
 }
 
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 3px 3px 0;
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-}
+
 
 .next {
     right: 0;
@@ -910,23 +846,6 @@ html {
     position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
 }
 
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 3px 3px 0;
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-}
 
 .next {
     right: 0;
@@ -1041,23 +960,7 @@ html {
     position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
 }
 
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 3px 3px 0;
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-}
+
 
 .next {
     right: 0;
@@ -1159,23 +1062,7 @@ html {
     position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
 }
 
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 3px 3px 0;
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-}
+
 
 .next {
     right: 0;
@@ -1279,23 +1166,7 @@ html {
     position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
 }
 
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 0 3px 3px 0;
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-}
+
 
 .next {
     right: 0;
@@ -1419,7 +1290,7 @@ html {
     cursor: pointer;
     position: absolute;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
-            0 4px 12px rgba(0, 0, 0, 0.4);
+            0 4px 12px rgba(99, 99, 99, 0.4);
     top: 50%;
     
     /* NEU: Feste Maße und Padding entfernen, um perfekte Rundheit zu garantieren */
@@ -1427,10 +1298,10 @@ html {
     height: 55px;
     padding: 0; 
     
-    margin-top: -22px; /* Setzt auf die halbe Höhe (44px/2) des neuen Pfeils */
+    margin-top: -27.5px; /* Setzt auf die halbe Höhe (55px/2) des neuen Pfeils */
     color: #1f2937; /* Dunkle Farbe für besseren Kontrast */
-    font-weight: bold;
-    font-size: 2.25rem; /* Größerer Pfeil */
+    font-weight: normal !important;;
+    font-size: 3.25rem; /* Größerer Pfeil */
     transition: 0.6s ease;
     user-select: none;
     
@@ -1547,43 +1418,6 @@ html {
     position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
 }
 
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
-            0 4px 12px rgba(0, 0, 0, 0.4);
-    top: 50%;
-    
-    /* NEU: Feste Maße und Padding entfernen, um perfekte Rundheit zu garantieren */
-    width: 55px; 
-    height: 55px;
-    padding: 0; 
-    
-    margin-top: -22px; /* Setzt auf die halbe Höhe (44px/2) des neuen Pfeils */
-    color: #1f2937; /* Dunkle Farbe für besseren Kontrast */
-    font-weight: bold;
-    font-size: 2.25rem; /* Größerer Pfeil */
-    transition: 0.6s ease;
-    user-select: none;
-    
-    /* MILCHIGER EFFEKT */
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px); /* Für Safari */
-
-    border-radius: 9999px; /* Runde Form */
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-
-    /* Zentriert den Pfeilinhalt */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* Sorgt dafür, dass der Pfeil sichtbar ist */
-    visibility: visible !important; 
-    opacity: 1 !important; 
-}
 
 /* Positionierung des linken Pfeils ausserhalb */
 .prev {
