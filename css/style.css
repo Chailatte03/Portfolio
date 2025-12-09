@@ -347,7 +347,15 @@ html {
     
 }
 
-/* --- .inhalt-bild-statisch REGEL WURDE ENTFERNT --- */
+.bild-cover {
+    grid-area: cover;
+}
+
+.projekt-inhalt2 {
+    padding-left: 0%; 
+    margin-left: 0%;
+    text-align: left;
+}
 
 
 .projekttextwhiskeyclub-titel {
@@ -358,6 +366,7 @@ html {
     font-family: "aboreto", sans-serif;
     font-weight: 400;
     font-style: normal;
+    margin-left: 0%;
 
 }
 
@@ -366,6 +375,7 @@ html {
 
     margin-top: 0; 
     max-width: 80%;
+    margin-left: 0%;
 }
 
 .entwurfbild {
@@ -382,26 +392,47 @@ html {
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
 }
 
-.skills {
+.skillstitel {
     margin-top: 50px; 
     font-size: 30px;
     font-family: "aboreto", sans-serif;
     font-weight: 400;
     font-style: normal;
+    margin-left: 0%;
     
     
 }
 
-.sprache {
+.skillstext {
+    margin-top: 0; 
+    max-width: 80%;
+    margin-left: 0%;
+    
+}
+
+.sprachetitel {
     margin-top: 50px; 
     font-size: 30px;
     font-family: "aboreto", sans-serif;
     font-weight: 400;
     font-style: normal;
-    
-    
+    margin-left: 0%;
 
 }
+
+.sprachetext {
+     margin-top: 0; 
+    max-width: 80%;
+    margin-left: 0%;
+}
+
+
+
+
+
+
+
+
 
 
 /* Kontakt */
