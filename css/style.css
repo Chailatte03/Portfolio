@@ -754,9 +754,8 @@ html {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
     ". inhalt inhalt inhalt ."
-    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
-    ;
-    /* Definiert den Abstand zwischen Cover und Inhalt */
+    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild ";
+   
 }
 
 
