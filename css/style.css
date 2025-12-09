@@ -865,10 +865,10 @@ html {
     transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
 }
 
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
+
 .inhalt-slide.active {
     opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
+    position: relative; 
 }
 
 
@@ -1050,9 +1050,9 @@ html {
 .projekt-inhalt {
     grid-area: inhalt;
     display: flex;
-    flex-direction: column; /* Stellt Bild und Text untereinander */
-    align-items: center; /* Zentriert die Inhalte horizontal */
-    padding: 0 50px; /* Fügt inneren Abstand hinzu, falls nötig */
+    flex-direction: column;
+    align-items: center; 
+    padding: 0 50px;
 }
 
 .bildinhalt1 {
