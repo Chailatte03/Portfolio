@@ -562,8 +562,6 @@ html {
     /* 1. Volle Breite des Viewports */
     width: 100vw; 
     
-    /* 2. Zentrierung im Grid-Kontext (kritisch!) */
-    /* Die Hälfte der Differenz zwischen Container-Breite und Viewport-Breite negativ verschieben */
     position: relative;
     left: 94.5%;
     transform: translateX(-50%);
@@ -591,7 +589,7 @@ html {
 
 .bildinhalt1 {
     width: 100%; 
-    max-width: 800px; /* Optional: Maximale Breite festlegen */
+    max-width: 800px; 
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
     margin-bottom: 100px; 
     margin-top: 100px; 
@@ -757,9 +755,6 @@ html {
     "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild ";
    
 }
-
-
-
 
 .slideshow-container {
     position: relative; 
@@ -1227,33 +1222,6 @@ html {
     filter: none
    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
