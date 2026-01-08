@@ -1,5 +1,20 @@
+/* =========================================
+   1. GLOBALE STILE & BASICS
+   ========================================= */
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "dm-sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
 }
 
 img {
@@ -7,53 +22,52 @@ img {
     display: block;
 }
 
-body {
-font-family: "dm-sans", sans-serif;
-font-weight: 400;
-font-style: normal;
-margin: 0;
-}
-
-/* Menüleiste Homepage */
-/* Homepage */
-
-
 a {
     color: black;
     text-decoration: none;
 }
+
+li {
+    list-style: none;
+    padding-left: 15px;
+    position: relative;
+}
+
+li:before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* =========================================
+   2. NAVIGATION
+   ========================================= */
+
 .nav {
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-grid-template-areas: 
-"nav_1 . . nav_2 . . nav_3";
-position: sticky;
-padding: 20px 50px;
-top: 0;
-z-index: 1000;
-background-color: transparent;   
-transition: all 0.3s ease;
-transition: all 0.3s ease-out;
-
-font-family: "aboreto", sans-serif;
-font-weight: 400;
-font-style: normal;
-
-
-
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "nav_1 . . nav_2 . . nav_3";
+    position: sticky;
+    padding: 20px 50px;
+    top: 0;
+    z-index: 1000;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
+    font-family: "aboreto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .nav_1, .nav_2, .nav_3 {
-    /* --- OPTIK (Größe, Farbe, Milchglas) --- */
-    background-color: rgba(255, 255, 255, 0.30); /* Leicht transparentes Weiß */
-    backdrop-filter: blur(20px);                 /* Starkes Verschwimmen */
-    -webkit-backdrop-filter: blur(20px);         /* Für Safari */
-    
-    padding: 15px 30px;  
-    border-radius: 30px; 
-    font-size: 20px;    
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    background-color: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,72 +75,30 @@ font-style: normal;
     transform: scale(1);
 }
 
-
-/* Hover Navigation */
 .nav_1:hover, .nav_2:hover, .nav_3:hover {
-    /* Die Pille wird 10% größer */
-    transform: scale(1.1); 
-    
-    /* Farbe Pille*/
-    background-color: rgba(255, 255, 255, 0.9); 
-    
-    /* Schatten */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-    
-    /* Mauszeiger wird zur Hand */
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
 
+.nav_1 { text-align: left; grid-area: nav_1; justify-self: start; }
+.nav_2 { display: grid; text-align: center; grid-area: nav_2; justify-self: center; }
+.nav_3 { display: grid; text-align: right; grid-area: nav_3; justify-self: end; }
 
-.nav_1 {
-  text-align: left;
-  grid-area: nav_1;
-  justify-self: start;
-}
+/* =========================================
+   3. HOMEPAGE GRID & BILDER
+   ========================================= */
 
-.nav_2 {
-  display: grid;
-  text-align: center;
-  grid-area: nav_2;
-  justify-self: center;
-}
-
-.nav_3 {
-  display: grid;
-  text-align: right;
-  grid-area: nav_3;
-  justify-self: end
-}
-
-/* Hauptbild + Coverbilder Homepage */
 .bild {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
-    "hauptbild hauptbild hauptbild hauptbild"
-    "erstesbild  zweitesbild dritesbild viertesbild"
-    "fünftesbild sechstesbild achtesbild neuntesbild"
-    ". elftesbild zehntesbild .";
+        "hauptbild hauptbild hauptbild hauptbild"
+        "erstesbild zweitesbild dritesbild viertesbild"
+        "fünftesbild sechstesbild achtesbild neuntesbild"
+        ". elftesbild zehntesbild .";
 }
-html {
-    /* Fügt ein sanftes Scroll-Verhalten für Anker-Links hinzu */
-    scroll-behavior: smooth;
-}
-.bild-2, .bild-3, .bild-4, .bild-5, .bild-6, .bild-7, .bild-8, .bild-9, .bild-10, .bild-11 {
-    /* Sorgt dafür, dass die Bewegung 0.4 Sekunden dauert und sanft abbremst */
-    transition: transform 0.4s ease-out;
-}
-
-/* 2. Die Bewegung beim Drüberfahren (Hover) */
-.bild-2:hover, .bild-3:hover, .bild-4:hover, .bild-5:hover, .bild-6:hover, .bild-7:hover, .bild-8:hover, .bild-9:hover, .bild-10:hover, .bild-11:hover {
-    /* translateY(-15px) = Das Bild schwebt 15 Pixel nach oben */
-    /* scale(1.02) = Das Bild wird minimal (2%) grösser (sieht edel aus) */
-    transform: translateY(-15px) scale(1.02);
-    
-    /* Mauszeiger wird zur Hand */
-    cursor: pointer;
-}
-
 
 .bild-1 {
     grid-area: hauptbild;
@@ -134,1330 +106,222 @@ html {
     margin-top: -170px;
 }
 
-/* Bilder Homepage */
-
-.bild-2 {
-    grid-area: erstesbild;
-    margin-bottom: 0px;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.40));
-    /* Abstand an einem der Vier Kanten */
-    padding: 0px 0px 0px 0px;
-   /* Bild skalieren */
-    width: 66%;
-    justify-self: center;
-    align-self: baseline;
-    
-}
-
-.bild-unterschrift-1 {
-    /* Optional: Schriftgröße und Ausrichtung anpassen */
-    font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
-}
-
-.bild-3 {
-    grid-area: zweitesbild;
-    margin-bottom: 0px;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    padding: 0px 0px 0px 0px;
-    width: 60%;
-    justify-self: center;
-    align-self: baseline;
-}
-.bild-unterschrift-2 {
-    /* Optional: Schriftgröße und Ausrichtung anpassen */
-    font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
-}
-
-.bild-4 {
-    grid-area: dritesbild;
-    margin-bottom: 0px;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    padding: 0px 0px 0px 0px;
-    width: 60%;
+/* Gemeinsame Transition für alle Hover-Bilder */
+.bild-2, .bild-3, .bild-4, .bild-5, .bild-6, .bild-7, .bild-8, .bild-9, .bild-10, .bild-11 {
+    transition: transform 0.4s ease-out;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30)); /* Standard-Schatten */
+    padding: 0;
     justify-self: center;
     align-self: baseline;
 }
 
-.bild-unterschrift-3 {
+.bild-2:hover, .bild-3:hover, .bild-4:hover, .bild-5:hover, .bild-6:hover, 
+.bild-7:hover, .bild-8:hover, .bild-9:hover, .bild-10:hover, .bild-11:hover {
+    transform: translateY(-15px) scale(1.02);
+    cursor: pointer;
+}
+
+/* Spezifische Bild-Eigenschaften (Widersprüchliche Angaben beibehalten) */
+.bild-2  { grid-area: erstesbild; margin-bottom: 0; width: 66%; filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.40)); }
+.bild-3  { grid-area: zweitesbild; margin-bottom: 0; width: 60%; }
+.bild-4  { grid-area: dritesbild; margin-bottom: 0; width: 60%; }
+.bild-5  { grid-area: viertesbild; margin-bottom: 0%; width: 65%; }
+.bild-6  { grid-area: fünftesbild; margin-bottom: 0%; margin-top: 5%; width: 90%; }
+.bild-7  { grid-area: sechstesbild; margin-bottom: 0%; margin-top: 5%; width: 60%; }
+.bild-8  { grid-area: achtesbild; margin-bottom: 0%; margin-top: 5%; width: 57%; }
+.bild-9  { grid-area: neuntesbild; margin-bottom: 0%; margin-top: 5%; width: 57%; }
+.bild-10 { grid-area: zehntesbild; margin-bottom: 0%; margin-top: 5%; width: 57%; }
+.bild-11 { grid-area: elftesbild; margin-bottom: 0%; margin-top: 5%; width: 57%; }
+
+/* Bildunterschriften Homepage */
+.bild-unterschrift-1, .bild-unterschrift-2, .bild-unterschrift-3, .bild-unterschrift-4, 
+.bild-unterschrift-5, .bild-unterschrift-6, .bild-unterschrift-7, .bild-unterschrift-8, 
+.bild-unterschrift-9, .bild-unterschrift-10 {
     font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
-.bild-5 {
-    grid-area: viertesbild;
-    margin-bottom: 0%;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    padding: 0px 0px 0px 0px;
-    width: 65%;
-    justify-self: center;
-    align-self: baseline;
-    
-}
+/* =========================================
+   4. PROJEKT SEITEN - LAYOUTS
+   ========================================= */
 
-.bild-unterschrift-4 {
-    font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
-}
-
-.bild-6 {
-    grid-area: fünftesbild;
-    margin-bottom: 0%;
-    margin-top: 5%;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    padding: 0px 0px 0px 0px;
-    width: 90%;
-    justify-self: center;
-    align-self: baseline;
-    
-}
-
-.bild-unterschrift-5 {
-    font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
-}
-
-.bild-7 {
-    grid-area: sechstesbild;
-    margin-bottom: 0%;
-    margin-top: 5%;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    padding: 0px 0px 0px 0px;
-    width: 60%;
-    justify-self: center;
-    align-self: baseline;
-
-}
-
-.bild-unterschrift-6 {
-    font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
-}
-
-.bild-8 {
-    grid-area: achtesbild;
-    margin-bottom: 0%;
-    margin-top: 5%;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    padding: 0px 0px 0px 0px;
-    width: 57%;
-    justify-self: center;
-    align-self: baseline;
-}
-
-.bild-unterschrift-7 {
-    font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
-}
-
-.bild-9 {
-    grid-area: neuntesbild;
-    margin-bottom: 0%;
-    margin-top: 5%;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    padding: 0px 0px 0px 0px;
-    width: 57%;
-    justify-self: center;
-    align-self: baseline;
-}
-
-.bild-unterschrift-8 {
-    font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
-}
-
-.bild-10 {
-    grid-area: zehntesbild;
-    margin-bottom: 0%;
-    margin-top: 5%;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    padding: 0px 0px 0px 0px;
-    width: 57%;
-    justify-self: center;
-    align-self: baseline;
-}
-
-.bild-unterschrift-9 {
-    font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
-}
-
-.bild-11 {
-    grid-area: elftesbild;
-    margin-bottom: 0%;
-    margin-top: 5%;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    padding: 0px 0px 0px 0px;
-    width: 57%;
-    justify-self: center;
-    align-self: baseline;
-}
-
-.bild-unterschrift-10 {
-    font-size: 15px;
-    text-align: center; 
-    margin-top: 30px; /* Kleiner Abstand zwischen Bild und Text */
-    margin-bottom: 20px; /* Abstand zur nächsten Zeile */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Über mich seite*/
-
-.bildwhiskeyclub {
+/* Gemeinsames Grid für die meisten Projekt-Seiten */
+.bildwhiskeyclub, .bildlondon, .bildzeitspirale, .bildbewegungimbild, 
+.bildlampen, .bildkopfzeichnen, .bildfotografie, .bildskizzen {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-   ". cover cover cover ."
-    ". inhalt inhalt inhalt .";
-    row-gap: 50px; /* Definiert den Abstand zwischen Cover und Inhalt */
-    
+    row-gap: 50px;
 }
 
-.bild-cover {
-    grid-area: cover;
+.bildwhiskeyclub { grid-template-areas: ". cover cover cover ." ". inhalt inhalt inhalt ."; }
+.bildlondon      { grid-template-areas: ". inhalt inhalt inhalt ."; }
+.bildzeitspirale, .bildbewegungimbild, .bildlampen { 
+    grid-template-areas: ". inhalt inhalt inhalt ." "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild "; 
+}
+.bildkopfzeichnen { 
+    grid-template-areas: "cover cover cover cover cover" ". inhalt inhalt inhalt ." "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild "; 
+}
+.bildfotografie { 
+    grid-template-areas: ". cover cover cover ." ". inhalt inhalt inhalt ." "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild "; 
+}
+.bildskizzen { 
+    grid-template-areas: ". . cover . ." ". inhalt inhalt inhalt ." "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild "; 
+}
+.bildzweileben, .bildmusikplakat {
+    display: grid;
+    grid-template-areas: ". . cover . ." ". inhalt inhalt inhalt ." "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild ";
 }
 
-.projekt-inhalt2 {
-    padding-left: 0%; 
-    margin-left: 0%;
+/* Projekt-Inhaltlemente */
+.bild-cover { grid-area: cover; }
+.bildwhiskeyclub .bild-cover { margin-bottom: 50px; padding: 0 10%; }
+.bild7 { grid-area: cover; margin-top: -170px; filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30)); margin-bottom: 50px; }
+.bild10 { grid-area: cover; margin-top: 2%; filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30)); margin-bottom: 50px; }
+
+.projekt-inhalt, .projekt-inhalt2 {
+    grid-area: inhalt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: left;
 }
 
-
-.projekttextwhiskeyclub-titel {
- 
-    /* Abstand wird hier neu definiert, da das Inhaltsbild fehlt */
-    margin-top: 5px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin-left: 0%;
-
-}
-
-
-.projekttextwhiskeyclub-text {
-
-    margin-top: 0; 
-    max-width: 80%;
-    margin-left: 0%;
-}
-
-.entwurfbild {
-
-    width: 100vw; 
-    position: relative;
-    left: 94.5%;
-    transform: translateX(-50%);
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 100px; 
-    margin-bottom: 0px; 
+.bildinhalt1 {
+    width: 100%;
+    max-width: 800px;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
+    margin-bottom: 100px;
+    margin-top: 100px;
 }
 
-.skillstitel {
-    margin-top: 50px; 
+.entwurfbild { width: 100%; }
+.video { grid-area: cover; margin-top: 40px; margin-bottom: 200px; scale: 125%; width: 100%; }
+
+/* =========================================
+   5. SLIDESHOW & NAVIGATIONSPFEILE
+   ========================================= */
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.inhalt-slide {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.inhalt-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 4px 12px rgba(99, 99, 99, 0.4);
+    top: 50%;
+    width: 55px;
+    height: 55px;
+    padding: 0;
+    margin-top: -27.5px;
+    color: #1f2937;
+    font-size: 2.7rem;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 9999px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.prev { left: 0; transform: translate(calc(-100% - 10px), 0); padding-right: 4px; }
+.next { right: 0; transform: translate(calc(100% + 10px), 0); padding-left: 4px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   6. TEXT STYLES (TITEL & TEXTE)
+   ========================================= */
+
+/* Projekt-Titel */
+.projekttextwhiskeyclub-titel, .skillstitel, .sprachetitel, 
+.projekttextlondon-titel, .projekttextzeitspirale-titel {
+    margin-top: 50px;
     font-size: 30px;
     font-family: "aboreto", sans-serif;
     font-weight: 400;
     font-style: normal;
     margin-left: 0%;
-    
-    
 }
 
-.skillstext {
-    margin-top: 0; 
-    max-width: 80%;
-    margin-left: 0%;
-    
-}
+.projekttextwhiskeyclub-titel { margin-top: 5px; } /* Ausnahme-Abstand */
 
-.sprachetitel {
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin-left: 0%;
-
-}
-
-.sprachetext {
-     margin-top: 0; 
+/* Projekt-Texte */
+.projekttextwhiskeyclub-text, .sprachetext, .projekttextlondon-text, 
+.projekttextzeitspirale-text {
+    margin-top: 0;
     max-width: 80%;
     margin-left: 0%;
 }
 
+.skillstext { width: 300px; }
 
+/* =========================================
+   7. KONTAKT & SONSTIGES
+   ========================================= */
 
-
-
-
-
-
-
-
-/* Kontakt */
 .email {
     text-align: center;
-    font-size: 1.5em; 
+    font-size: 1.5em;
     font-family: "aboreto", sans-serif;
     display: flex;
     justify-content: center;
     margin-top: 200px;
 }
 
-
 .email a {
-    text-decoration: none;
-    color: black; 
     transition: transform 0.3s ease-in-out;
     display: inline-block;
 }
-
 
 .email a:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* londonprojekt */
-.bildlondon {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    ". inhalt inhalt inhalt ." /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
-    ;
-    row-gap: 50px; /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-/* 3. Styling für die Elemente im Wrapper */
-.bildinhalt1 {
-    width: 100%; 
-    max-width: 800px; /* Optional: Maximale Breite festlegen */
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    margin-bottom: 100px; 
-    margin-top: 100px; 
-}
-
-
-
-
-.slideshow-container {
-    /* Wichtig: Erstellt einen Referenzpunkt für die absolut positionierten Bilder */
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
-}
-
-
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.projekttextlondon-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-.projekttextlondon-text {
-
-    margin-top: 0; 
-    max-width: 80%;
-}
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    
-    position: relative;
-    left: 94.5%;
-    transform: translateX(-50%);
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 100px; 
-    margin-bottom: 0px; 
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-}
-
-
-
-
-/* Zeitsprale */
-.bildzeitspirale {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    ". inhalt inhalt inhalt ."
-    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
-    ;
-    /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-.bildinhalt1 {
-    width: 100%; 
-    max-width: 800px; 
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-    margin-bottom: 100px; 
-    margin-top: 100px; 
-}
-
-.slideshow-container {
-    /* Wichtig: Erstellt einen Referenzpunkt für die absolut positionierten Bilder */
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
-}
-
-
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.projekttextzeitspirale-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-.projekttextzeitspirale-text {
-    margin-top: 0; 
-    max-width: 80%;
-}
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 0px; 
-    
-   
-    box-shadow: none;
-    filter: none
-   
-}
-
-
-
-
-
-/* Bewegung im Bild */
-.bildbewegungimbild {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    ". inhalt inhalt inhalt ."
-    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
-    ;
-    /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-
-.bildinhalt1 {
-    width: 100%; 
-    max-width: 800px; 
-    margin-bottom: 100px; 
-    margin-top: 100px; 
-}
-
-.slideshow-container {
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
-}
-
-
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.projekttextzeitspirale-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-.projekttextzeitspirale-text {
-    margin-top: 0; 
-    max-width: 80%;
-}
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 0px; 
-    
-   
-    box-shadow: none;
-    filter: none
-   
-}
-
-
-
-/* Lampen */
-
-.bildlampen {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    ". inhalt inhalt inhalt ."
-    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild ";
-   
-}
-
-.slideshow-container {
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
-}
-
-
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.projekttextzeitspirale-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-.projekttextzeitspirale-text {
-    margin-top: 0; 
-    max-width: 80%;
-}
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 100px; 
-    
-   
-    box-shadow: none;
-    filter: none
-   
-}
-
-
-/* Whiskey Club */
-
-.bildwhiskeyclub {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-   ". cover cover cover ."
-    ". inhalt inhalt inhalt .";
-    row-gap: 50px; /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-.bild-cover {
-    grid-area: cover;
-    margin-bottom: 50px;
-    padding: 0 10%;
-}
-
-
-
-
-
-.slideshow-container {
-    /* Wichtig: Erstellt einen Referenzpunkt für die absolut positionierten Bilder */
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; 
-}
-
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.projekttextwhiskeyclub-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    
-    /* 2. Zentrierung im Grid-Kontext (kritisch!) */
-    /* Die Hälfte der Differenz zwischen Container-Breite und Viewport-Breite negativ verschieben */
-    position: relative;
-    left: 94.5%;
-    transform: translateX(-50%);
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 100px; 
-    margin-bottom: 0px; 
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30));
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Kopfzeichnen */
-.bildkopfzeichnen{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    "cover cover cover cover cover" /* Zeile 1: Cover-Bild */
-    ". inhalt inhalt inhalt ."
-    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
-    ;
-    /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-.bild7 {
-    grid-area: cover;
-    margin-top: -170px; 
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.
-    30));
-    margin-bottom: 50px;
-}
-
-.bildinhalt1 {
-    width: 100%; 
-    max-width: 800px; 
-    margin-bottom: 100px; 
-    margin-top: 100px; 
-}
-
-.slideshow-container {
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
-}
-
-
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.projekttextzeitspirale-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-.projekttextzeitspirale-text {
-    margin-top: 0; 
-    max-width: 80%;
-}
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 100px; 
-    
-   
-    box-shadow: none;
-    filter: none
-   
-}
-
-
-
-
-
-/* Zwei Leben */
-
-.bildzweileben { 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    ". . cover . ." /* Zeile 1: Cover-Bild */
-    ". inhalt inhalt inhalt ."
-    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
-    ;
-    /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-.video {
-    grid-area: cover;
-    margin-top: 40px; 
-    margin-bottom: 200px;
-    scale: 125%;
-    width: 100%;
-}
-
-.projekt-inhalt {
-    grid-area: inhalt;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 0 50px;
-}
-
-.bildinhalt1 {
-    width: 100%; 
-    max-width: 800px; 
-    margin-bottom: 100px; 
-    margin-top: 100px; 
-}
-
-.slideshow-container {
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
-}
-
-
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.projekttextzeitspirale-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-.projekttextzeitspirale-text {
-    margin-top: 0; 
-    max-width: 80%;
-}
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 100px; 
-    
-   
-    box-shadow: none;
-    filter: none
-   
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Musikplakat */
-
-
-.bildmusikplakat { 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    ". . cover . ." /* Zeile 1: Cover-Bild */
-    ". inhalt inhalt inhalt ."
-    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
-    ;
-    /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-.video {
-    grid-area: cover;
-    margin-top: 40px; 
-    margin-bottom: 200px;
-    scale: 125%;
-    width: 100%;
-}
-
-
-.bildinhalt1 {
-    width: 100%; 
-    max-width: 800px; 
-    margin-bottom: 100px; 
-    margin-top: 100px; 
-}
-
-.slideshow-container {
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
-}
-
-
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.projekttextzeitspirale-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-.projekttextzeitspirale-text {
-    margin-top: 0; 
-    max-width: 80%;
-}
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 100px; 
-    
-   
-    box-shadow: none;
-    filter: none
-   
-}
-
-
-
-/* Fotografie */
-
-.bildfotografie {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    ". cover cover cover ." /* Zeile 1: Cover-Bild */
-    ". inhalt inhalt inhalt ."
-    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
-    ;
-    /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-.bild10 {
-    grid-area: cover;
-    margin-top: 2%; 
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.
-    30));
-    margin-bottom: 50px;
-}
-
-.bildinhalt1 {
-    width: 100%; 
-    max-width: 800px; 
-    margin-bottom: 100px; 
-    margin-top: 100px; 
-}
-
-.slideshow-container {
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
-}
-
-/* Styling für die Pfeile */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
-            0 4px 12px rgba(99, 99, 99, 0.4);
-    top: 50%;
-    
-    /* NEU: Feste Maße und Padding entfernen, um perfekte Rundheit zu garantieren */
-    width: 55px; 
-    height: 55px;
-    padding: 0; 
-    
-    margin-top: -27.5px; /* Setzt auf die halbe Höhe (55px/2) des neuen Pfeils */
-    color: #1f2937; /* Dunkle Farbe für besseren Kontrast */
-    font-weight: normal;
-    font-size: 2.7rem; /* Größerer Pfeil */
-    transition: 0.6s ease;
-    user-select: none;
-    
-    /* MILCHIGER EFFEKT */
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px); /* Für Safari */
-
-    border-radius: 9999px; /* Runde Form */
-    z-index: 2; /* Stellt sicher, dass die Pfeile über dem Bild liegen */
-
-    /* Zentriert den Pfeilinhalt */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* Sorgt dafür, dass der Pfeil sichtbar ist */
-    visibility: visible !important; 
-    opacity: 1 !important; 
-}
-
-/* Positionierung des linken Pfeils ausserhalb */
-.prev {
-    left: 0;
-    transform: translate(calc(-100% - 10px), 0); 
-    padding-right: 4px;
-}
-
-/* Positionierung des rechten Pfeils ausserhalb */
-.next {
-    right: 0;
-    transform: translate(calc(100% + 10px), 0);
-    padding-left: 4px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    
-}
-
-
-.projekttextzeitspirale-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-.projekttextzeitspirale-text {
-    margin-top: 0; 
-    max-width: 80%;
-}
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 100px; 
-    
-   
-    box-shadow: none;
-    filter: none
-   
-}
-
-/* Skizzen */
-
-.bildskizzen {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    ". . cover . ." /* Zeile 1: Cover-Bild */
-    ". inhalt inhalt inhalt ."
-    "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild " /* Zeile 2: Der gesamte Inhalt (Bild + Text) */
-    ;
-    /* Definiert den Abstand zwischen Cover und Inhalt */
-}
-
-.bildinhalt1 {
-    width: 100%; 
-    max-width: 800px; 
-    margin-bottom: 100px; 
-    margin-top: 100px; 
-}
-
-.slideshow-container {
-    position: relative; 
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 20px;
-}
-
-.inhalt-slide {
-    width: 100%;
-    height: auto;
-    /* Stapelt alle Bilder übereinander */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    /* Versteckt alle Bilder standardmäßig */
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; /* Fügt eine sanfte Überblendung hinzu */
-}
-
-/* Nur das Bild mit der Klasse 'active' ist sichtbar */
-.inhalt-slide.active {
-    opacity: 1;
-    position: relative; /* Wichtig, damit der Container die richtige Höhe behält */
-}
-
-
-/* Positionierung des linken Pfeils ausserhalb */
-.prev {
-    left: 0;
-    transform: translate(calc(-100% - 10px), 0); 
-    padding-right: 4px;
-}
-
-/* Positionierung des rechten Pfeils ausserhalb */
-.next {
-    right: 0;
-    transform: translate(calc(100% + 10px), 0);
-    padding-left: 4px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    
-}
-
-
-.projekttextzeitspirale-titel {
- 
-    margin-top: 50px; 
-    font-size: 30px;
-    font-family: "aboreto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-
-.projekttextzeitspirale-text {
-    margin-top: 0; 
-    max-width: 80%;
-}
-
-.entwurfbild {
-    /* 1. Volle Breite des Viewports */
-    width: 100vw; 
-    height: auto;
-    display: block;
-    object-fit: cover;
-    margin-top: 0px; 
-    
-   
-    box-shadow: none;
-    filter: none
-   
+/* =========================================
+   8. MEDIA QUERIES
+   ========================================= */
+
+@media screen and (max-width: 799px) {
+    .bildzweileben {
+        grid-template-columns: 20px 1fr 1fr 1fr 20px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .bildzweileben {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .projekt-inhalt {
+        padding: 0 50px;
+    }
 }
