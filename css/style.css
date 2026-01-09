@@ -177,8 +177,8 @@ li:before {
 /* Projekt-Inhaltlemente */
 .bild-cover { grid-area: cover; }
 .bildwhiskeyclub .bild-cover { margin-bottom: 50px; padding: 0 10%; }
-.bild7 { grid-area: cover; margin-top: -170px; filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30)); margin-bottom: 50px; }
-.bild10 { grid-area: cover; margin-top: 2%; filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30)); margin-bottom: 50px; }
+.bild7 { grid-area: cover; margin-top: -170px; margin-bottom: 50px; }
+.bild10 { grid-area: cover; margin-top: 2%; margin-bottom: 50px; }
 
 .projekt-inhalt, .projekt-inhalt2 {
     grid-area: inhalt;
