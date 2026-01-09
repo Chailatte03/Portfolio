@@ -311,16 +311,60 @@ li:before {
    ========================================= */
 
 @media screen and (max-width: 799px) {
-    .bildzweileben {
-        grid-template-columns: 20px 1fr 1fr 1fr 20px;
+    
+    /* 1. NAVIGATION: Nebeneinander behalten */
+    .nav {
+        /* Wir reduzieren von 7 auf 3 Spalten, damit sie Platz haben */
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-areas: "nav_1 nav_2 nav_3";
+        padding: 15px 10px; /* Weniger Außenabstand */
+        gap: 8px; /* Kleiner Abstand zwischen den Bubbles */
     }
-}
 
-@media screen and (min-width: 800px) {
-    .bildzweileben {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    .nav_1, .nav_2, .nav_3 {
+        padding: 10px 5px; /* Kompakteres Inneres */
+        font-size: 14px;    /* Etwas kleinere Schrift für Mobile */
+        width: auto;
+        min-width: 0;      /* Verhindert, dass die Bubbles das Grid sprengen */
     }
-    .projekt-inhalt {
-        padding: 0 50px;
+
+    /* 2. HOMEPAGE GRID: Projekte untereinander */
+    .bild {
+        grid-template-columns: 1fr; 
+        grid-template-areas:
+            "hauptbild"
+            "erstesbild"
+            "zweitesbild"
+            "dritesbild"
+            "viertesbild"
+            "fünftesbild"
+            "sechstesbild"
+            "achtesbild"
+            "neuntesbild"
+            "elftesbild"
+            "zehntesbild";
+        gap: 50px;
+        padding: 0 15px;
+    }
+
+    /* 3. BILD-BREITEN: Fast volle Breite auf dem Handy */
+    .bild-1 {
+        margin-top: 0; /* Kein negativer Margin auf Mobile */
+        margin-bottom: 60px;
+    }
+
+    .bild-2, .bild-3, .bild-4, .bild-5, .bild-6, .bild-7, .bild-8, .bild-9, .bild-10, .bild-11 {
+        width: 100%; /* Volle Breite im Grid */
+        margin-top: 0 !important;
+        justify-self: center;
+    }
+
+    /* 4. TEXTE: Zentrieren für bessere Lesbarkeit auf Mobile */
+    .bild-unterschrift-1, .bild-unterschrift-2, .bild-unterschrift-3, 
+    .bild-unterschrift-4, .bild-unterschrift-5, .bild-unterschrift-6, 
+    .bild-unterschrift-7, .bild-unterschrift-8, .bild-unterschrift-9, .bild-unterschrift-10 {
+        font-size: 14px;
+        margin-top: 15px;
+        margin-bottom: 40px;
     }
 }
