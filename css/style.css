@@ -348,7 +348,7 @@ li:before {
 
 
 /* =========================================
-   8. MEDIA QUERIES (Kopfzeichnen Anpassung)
+   8. MEDIA QUERIES (Handy-Version mit Blocksatz)
    ========================================= */
 
 @media screen and (max-width: 799px) {
@@ -377,7 +377,7 @@ li:before {
         -webkit-backdrop-filter: blur(10px);
     }
 
-    /* 2. PROJEKT-TITEL (Zentriert) */
+    /* 2. PROJEKT-TITEL */
     [class*="-titel"], .skillstitel, .sprachetitel {
         text-align: center;
         width: 100%;
@@ -385,10 +385,22 @@ li:before {
         font-size: 24px;
     }
 
-    /* 3. ALLE PROJEKTSEITEN (Whiskey, London, etc.) */
+    /* --- OPTIMIERTER BLOCKSATZ FÜR MOBILE --- */
+    .projekttextwhiskeyclub-text, .sprachetext, .projekttextlondon-text, 
+    .projekttextzeitspirale-text, .projekttextmusikplakat-text, .skillstext {
+        text-align: justify;
+        text-justify: inter-word;  /* Verteilt Abstände nur zwischen Wörtern */
+        hyphens: auto;             /* EXTREM WICHTIG: Trennt Wörter, um Lücken zu füllen */
+        -webkit-hyphens: auto;
+        word-spacing: -0.02em;     /* Zieht Wörter leicht zusammen, um große Löcher zu vermeiden */
+        letter-spacing: 0.01em;    /* Minimaler Zeichenabstand für optischen Ausgleich */
+        overflow-wrap: break-word; /* Verhindert Layout-Bruch bei sehr langen Wörtern */
+    }
+
+    /* 3. ALLE PROJEKTSEITEN */
     .bildwhiskeyclub, .bildlondon, .bildzeitspirale, .bildbewegungimbild, 
     .bildlampen, .bildfotografie, .bildskizzen, .bildmusikplakat, .bildzweileben {
-        padding-top: 100px; /* Startet unter der Nav */
+        padding-top: 100px; 
         padding-left: 20px;
         padding-right: 20px;
         display: grid;
@@ -399,8 +411,8 @@ li:before {
 
     /* 4. SPEZIALFALL: KOPFZEICHNEN */
     .bildkopfzeichnen {
-        padding-top: 0; /* Cover bleibt oben angedockt */
-        padding-left: 0; /* Wichtig: Kein Padding hier, damit Cover randlos ist */
+        padding-top: 0;
+        padding-left: 0;
         padding-right: 0;
         display: grid;
         grid-template-columns: 1fr;
@@ -414,14 +426,13 @@ li:before {
         margin-top: 0;
     }
 
-    /* Damit der INHALT von Kopfzeichnen trotzdem die 20px Randabstand hat wie die anderen: */
     .bildkopfzeichnen .projekt-inhalt, 
     .bildkopfzeichnen .entwurfbild {
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    /* 5. HOMEPAGE GRID (2 Spalten) */
+    /* 5. HOMEPAGE GRID */
     .bild {
         display: grid;
         grid-template-columns: 1fr 1fr; 
@@ -448,7 +459,7 @@ li:before {
         margin-top: 0 !important;
     }
 
-    /* 6. SLIDESHOW BUTTONS (Nicht mehr abgeschnitten) */
+    /* 6. SLIDESHOW BUTTONS */
     .prev, .next {
         position: absolute;
         top: 50%;
