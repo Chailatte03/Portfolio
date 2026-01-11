@@ -1,3 +1,4 @@
+
 /* =========================================
    1. GLOBALE STILE & BASICS
    ========================================= */
@@ -15,6 +16,8 @@ body {
     font-weight: 400;
     font-style: normal;
     margin: 0;
+    /* Hilft gegen unschöne Zeilenenden */
+    text-wrap: pretty;
 }
 
 img {
@@ -53,7 +56,6 @@ li:before {
     top: 0;
     z-index: 1000;
     background-color: transparent;
-    transition: all 0.3s ease;
     transition: all 0.3s ease-out;
     font-family: "aboreto", sans-serif;
     font-weight: 400;
@@ -106,10 +108,9 @@ li:before {
     margin-top: -170px;
 }
 
-/* Gemeinsame Transition für alle Hover-Bilder */
 .bild-2, .bild-3, .bild-4, .bild-5, .bild-6, .bild-7, .bild-8, .bild-9, .bild-10, .bild-11 {
     transition: transform 0.4s ease-out;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30)); /* Standard-Schatten */
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.30)); 
     padding: 0;
     justify-self: center;
     align-self: baseline;
@@ -121,7 +122,6 @@ li:before {
     cursor: pointer;
 }
 
-/* Spezifische Bild-Eigenschaften (Widersprüchliche Angaben beibehalten) */
 .bild-2  { grid-area: erstesbild; margin-bottom: 0; width: 66%; filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.40)); }
 .bild-3  { grid-area: zweitesbild; margin-bottom: 0; width: 60%; }
 .bild-4  { grid-area: dritesbild; margin-bottom: 0; width: 60%; }
@@ -133,7 +133,6 @@ li:before {
 .bild-10 { grid-area: zehntesbild; margin-bottom: 0%; margin-top: 5%; width: 57%; }
 .bild-11 { grid-area: elftesbild; margin-bottom: 0%; margin-top: 5%; width: 57%; }
 
-/* Bildunterschriften Homepage */
 .bild-unterschrift-1, .bild-unterschrift-2, .bild-unterschrift-3, .bild-unterschrift-4, 
 .bild-unterschrift-5, .bild-unterschrift-6, .bild-unterschrift-7, .bild-unterschrift-8, 
 .bild-unterschrift-9, .bild-unterschrift-10 {
@@ -147,9 +146,8 @@ li:before {
    4. PROJEKT SEITEN - LAYOUTS
    ========================================= */
 
-/* Gemeinsames Grid für die meisten Projekt-Seiten */
 .bildwhiskeyclub, .bildlondon, .bildzeitspirale, .bildbewegungimbild, 
-.bildlampen, .bildkopfzeichnen, .bildfotografie, .bildskizzen {
+.bildlampen, .bildkopfzeichnen, .bildfotografie, .bildskizzen, .bildmusikplakat, .bildzweileben {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     row-gap: 50px;
@@ -169,16 +167,36 @@ li:before {
 .bildskizzen { 
     grid-template-areas: ". . cover . ." ". inhalt inhalt inhalt ." "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild "; 
 }
+
 .bildzweileben, .bildmusikplakat {
-    display: grid;
-    grid-template-areas: ". . cover . ." ". inhalt inhalt inhalt ." "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild ";
+    grid-template-areas: 
+        ". cover cover cover ." 
+        ". inhalt inhalt inhalt ." 
+        "entwurfbild entwurfsbild entwurfsbild entwurfsbild entwurfsbild ";
 }
 
-/* Projekt-Inhaltlemente */
-.bild-cover { grid-area: cover; }
-.bildwhiskeyclub .bild-cover { margin-bottom: 50px; padding: 0 10%; }
-.bild7 { grid-area: cover; margin-top: -170px; margin-bottom: 50px; }
-.bild10 { grid-area: cover; margin-top: 2%; margin-bottom: 50px; }
+/* ZENTRIERUNG DER COVER-ELEMENTE */
+.bild-cover, .bild7, .bild10 { 
+    grid-area: cover; 
+    justify-self: center; 
+    width: 100%;
+    max-width: none; /* Standardbegrenzung */
+}
+
+/* SPEZIALFALL KOPFZEICHNEN: VOLLE BREITE WIE HOMEPAGE */
+.bildkopfzeichnen .bild-cover {
+    max-width: none;
+    margin-top: -170px;
+    justify-self: stretch;
+}
+
+.bildwhiskeyclub .bild-cover { 
+    margin-bottom: 50px; 
+    padding: 0; 
+}
+
+.bild7 { margin-top: -170px; margin-bottom: 50px; }
+.bild10 { margin-top: 2%; margin-bottom: 50px; }
 
 .projekt-inhalt, .projekt-inhalt2 {
     grid-area: inhalt;
@@ -196,7 +214,16 @@ li:before {
 }
 
 .entwurfbild { width: 100%; }
-.video { grid-area: cover; margin-top: 40px; margin-bottom: 200px; scale: 125%; width: 100%; }
+
+.video { 
+    grid-area: cover; 
+    margin-top: 40px; 
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
+    justify-self: center; 
+}
 
 /* =========================================
    5. SLIDESHOW & NAVIGATIONSPFEILE
@@ -260,9 +287,8 @@ li:before {
    6. TEXT STYLES (TITEL & TEXTE)
    ========================================= */
 
-/* Projekt-Titel */
 .projekttextwhiskeyclub-titel, .skillstitel, .sprachetitel, 
-.projekttextlondon-titel, .projekttextzeitspirale-titel {
+.projekttextlondon-titel, .projekttextzeitspirale-titel, .projekttextmusikplakat-titel {
     margin-top: 50px;
     font-size: 30px;
     font-family: "aboreto", sans-serif;
@@ -271,14 +297,26 @@ li:before {
     margin-left: 0%;
 }
 
-.projekttextwhiskeyclub-titel { margin-top: 5px; } /* Ausnahme-Abstand */
+.projekttextwhiskeyclub-titel { margin-top: 5px; }
 
-/* Projekt-Texte */
+/* OPTIMIERTER BLOCKSATZ & TYPOGRAFIE */
 .projekttextwhiskeyclub-text, .sprachetext, .projekttextlondon-text, 
-.projekttextzeitspirale-text {
+.projekttextzeitspirale-text, .projekttextmusikplakat-text, .skillstext {
     margin-top: 0;
-    max-width: 80%;
     margin-left: 0%;
+    
+    /* Blocksatz-Einstellungen */
+    text-align: justify;
+    text-justify: inter-word;
+    
+    /* Silbentrennung (Wichtig für Blocksatz im Web) */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    
+    /* Lesbarkeit */
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    max-width: 65ch; /* Optimale Zeilenlänge für das Auge */
 }
 
 .skillstext { width: 300px; }
@@ -306,65 +344,120 @@ li:before {
     cursor: pointer;
 }
 
+
+
+
 /* =========================================
-   8. MEDIA QUERIES
+   8. MEDIA QUERIES (Kopfzeichnen Anpassung)
    ========================================= */
 
 @media screen and (max-width: 799px) {
-    
-    /* 1. NAVIGATION: Nebeneinander behalten */
+
+    /* 1. NAVIGATION (Glass-Look) */
     .nav {
-        /* Wir reduzieren von 7 auf 3 Spalten, damit sie Platz haben */
-        grid-template-columns: 1fr 1fr 1fr; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "nav_1 nav_2 nav_3";
-        padding: 15px 10px; /* Weniger Außenabstand */
-        gap: 8px; /* Kleiner Abstand zwischen den Bubbles */
+        padding: 15px 10px;
+        gap: 8px;
+        background: transparent;
     }
 
     .nav_1, .nav_2, .nav_3 {
-        padding: 10px 5px; /* Kompakteres Inneres */
-        font-size: 14px;    /* Etwas kleinere Schrift für Mobile */
-        width: auto;
-        min-width: 0;      /* Verhindert, dass die Bubbles das Grid sprengen */
+        padding: 10px 5px;
+        font-size: 14px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
     }
 
-    /* 2. HOMEPAGE GRID: Projekte untereinander */
+    /* 2. PROJEKT-TITEL (Zentriert) */
+    [class*="-titel"], .skillstitel, .sprachetitel {
+        text-align: center;
+        width: 100%;
+        margin-top: 30px;
+        font-size: 24px;
+    }
+
+    /* 3. ALLE PROJEKTSEITEN (Whiskey, London, etc.) */
+    .bildwhiskeyclub, .bildlondon, .bildzeitspirale, .bildbewegungimbild, 
+    .bildlampen, .bildfotografie, .bildskizzen, .bildmusikplakat, .bildzweileben {
+        padding-top: 100px; /* Startet unter der Nav */
+        padding-left: 20px;
+        padding-right: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "cover" "inhalt" "entwurfbild";
+        gap: 40px;
+    }
+
+    /* 4. SPEZIALFALL: KOPFZEICHNEN */
+    .bildkopfzeichnen {
+        padding-top: 0; /* Cover bleibt oben angedockt */
+        padding-left: 0; /* Wichtig: Kein Padding hier, damit Cover randlos ist */
+        padding-right: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "cover" "inhalt" "entwurfbild";
+        gap: 40px;
+    }
+
+    .bildkopfzeichnen .bild-cover {
+        grid-area: cover;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    /* Damit der INHALT von Kopfzeichnen trotzdem die 20px Randabstand hat wie die anderen: */
+    .bildkopfzeichnen .projekt-inhalt, 
+    .bildkopfzeichnen .entwurfbild {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 5. HOMEPAGE GRID (2 Spalten) */
     .bild {
-        grid-template-columns: 1fr; 
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
         grid-template-areas:
-            "hauptbild"
-            "erstesbild"
-            "zweitesbild"
-            "dritesbild"
-            "viertesbild"
-            "fünftesbild"
-            "sechstesbild"
-            "achtesbild"
-            "neuntesbild"
-            "elftesbild"
-            "zehntesbild";
-        gap: 50px;
-        padding: 0 10px;
+            "hauptbild hauptbild"
+            "erstesbild zweitesbild"
+            "dritesbild viertesbild"
+            "fünftesbild sechstesbild"
+            "achtesbild neuntesbild"
+            "elftesbild zehntesbild";
+        padding: 0;
+        gap: 40px 10px;
     }
 
-    /* 3. BILD-BREITEN: Fast volle Breite auf dem Handy */
     .bild-1 {
-        margin-top: 0; /* Kein negativer Margin auf Mobile */
-        margin-bottom: 60px;
+        grid-area: hauptbild;
+        margin-top: 0;
+        margin-bottom: 50px;
     }
 
     .bild-2, .bild-3, .bild-4, .bild-5, .bild-6, .bild-7, .bild-8, .bild-9, .bild-10, .bild-11 {
-        width: 100%; /* Volle Breite im Grid */
-        margin-top: 0 !important;
+        width: 85%;
         justify-self: center;
+        margin-top: 0 !important;
     }
 
-    /* 4. TEXTE: Zentrieren für bessere Lesbarkeit auf Mobile */
-    .bild-unterschrift-1, .bild-unterschrift-2, .bild-unterschrift-3, 
-    .bild-unterschrift-4, .bild-unterschrift-5, .bild-unterschrift-6, 
-    .bild-unterschrift-7, .bild-unterschrift-8, .bild-unterschrift-9, .bild-unterschrift-10 {
-        font-size: 14px;
-        margin-top: 15px;
-        margin-bottom: 40px;
+    /* 6. SLIDESHOW BUTTONS (Nicht mehr abgeschnitten) */
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 45px;
+        height: 45px;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.6);
     }
+    .prev { left: 5px; }
+    .next { right: 5px; }
 }
